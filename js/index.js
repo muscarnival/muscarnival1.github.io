@@ -38,5 +38,13 @@
 })(jQuery); // End of use strict
 
 function login () {
-  console.log('clicked')
+  var email = $(".email")[0].value
+  var password = $(".password")[0].value
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    if (error) alert(error.message)
+    // ...
+  })
 }
