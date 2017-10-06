@@ -105,14 +105,25 @@ a {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  -webkit-filter: hue-rotate(150deg) contrast(1);
+  filter: hue-rotate(180deg) contrast(1); }
   .masthead .intro-body {
     display: table-cell;
     vertical-align: middle; }
     .masthead .intro-body .brand-heading {
-      font-size: 50px; }
+      font-size: 80px;
+      color: #e0a0a3;
+      font-family: 'Lobster', cursive;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 50px;
+      padding-bottom: 0;
+      border: 6px solid #e0a0a3;
+      border-radius: 100% !important; }
     .masthead .intro-body .intro-text {
-      font-size: 18px; }
+      font-size: 26px;
+      color: #dc999c;
+      font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
   @media (min-width: 768px) {
     .masthead {
       height: 100%;
@@ -123,22 +134,22 @@ a {
         font-size: 22px; } }
 
 .btn-circle {
-  font-size: 26px;
-  width: 55px;
-  height: 55px;
+  font-size: 50px;
+  width: 100px;
+  height: 100px;
   margin-top: 15px;
-  line-height: 38px;
+  line-height: 80px;
   -webkit-transition: background 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
-  color: white;
-  border: 2px solid white;
+  color: #e0a0a3;
+  border: 6px solid #e0a0a3;
   border-radius: 100% !important;
-  background: transparent; }
+  background: rgba(0, 0, 0, 0.6); }
   .btn-circle:focus, .btn-circle:hover {
-    color: white;
+    color: #e0a0a3;
     outline: none;
-    background: rgba(255, 255, 255, 0.1); }
+    background: rgba(224, 160, 163, 0.1); }
 
 .content-section {
   padding-top: 150px;
