@@ -36,3 +36,7 @@
   // });
 
 })(jQuery); // End of use strict
+
+function login () {
+  console.log('clicked')
+}

@@ -250,5 +250,10 @@ body {
   color: #438185;
   border-color: transparent; }
 
+.login-btn:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #438185;
+  border-color: transparent !important; }
+
 .form-label {
   color: #438185; }

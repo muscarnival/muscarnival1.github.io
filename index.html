@@ -57,7 +57,7 @@
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
           </div>
         </form>
-        <button type="submit" class="btn btn-primary login-btn">Submit</button>
+        <button type="submit" onclick="login()" class="btn login-btn">Submit</button>
       </div>
     </section>
 
@@ -79,6 +79,22 @@
         <!--</div>-->
       <!--</div>-->
     <!--</section>-->
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB6W25napAR8VIksVpa_sgml4mkl_X5S_s",
+        authDomain: "muscarnival-45dce.firebaseapp.com",
+        databaseURL: "https://muscarnival-45dce.firebaseio.com",
+        projectId: "muscarnival-45dce",
+        storageBucket: "",
+        messagingSenderId: "649034251506"
+      };
+      firebase.initializeApp(config);
+    </script>
+
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
