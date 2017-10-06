@@ -170,8 +170,8 @@ a {
 
 @media (min-width: 992px) {
   .content-section {
-    padding-top: 200px;
-    padding-bottom: 200px; }
+    padding-top: 100px;
+    padding-bottom: 100px; }
   #map {
     height: 350px; } }
 
@@ -182,7 +182,7 @@ a {
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   text-transform: uppercase;
-  border-radius: 0; }
+  border-radius: 3px; }
 
 .btn-default {
   color: #42DCA3;
@@ -231,3 +231,20 @@ img::-moz-selection {
 
 body {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2); }
+
+.form-group {
+  font-family: 'Lobster', cursive;
+  width: 50%;
+  margin: 0 auto;
+  padding: 30px;
+  font-size: 22px;
+  font-weight: 100; }
+
+.login-btn {
+  margin-top: 15px;
+  color: #438185;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: transparent; }
+
+.form-label {
+  color: #438185; }
