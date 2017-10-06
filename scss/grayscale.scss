@@ -194,11 +194,9 @@ a {
   border: 6px solid #e0a0a3;
   border-radius: 100% !important;
   background: rgba(0,0,0,0.6);
-  &:focus,
   &:hover {
-    color: #e0a0a3;
     outline: none;
-    background: fade-out(#e0a0a3, .9);
+    background: fade-out(#fff, .9);
   }
 }
 
@@ -320,6 +318,12 @@ body {
   margin-top: 15px;
   color: #438185;
   background-color: rgba(255,255,255,0.1);
+  border-color: rgba(0,0,0,0);
+}
+
+.login-btn:hover {
+  background-color: rgba(255,255,255,0.2);
+  color: #438185;
   border-color: rgba(0,0,0,0);
 }
 

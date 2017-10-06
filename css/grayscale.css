@@ -146,10 +146,9 @@ a {
   border: 6px solid #e0a0a3;
   border-radius: 100% !important;
   background: rgba(0, 0, 0, 0.6); }
-  .btn-circle:focus, .btn-circle:hover {
-    color: #e0a0a3;
+  .btn-circle:hover {
     outline: none;
-    background: rgba(224, 160, 163, 0.1); }
+    background: rgba(255, 255, 255, 0.1); }
 
 .content-section {
   padding-top: 150px;
@@ -244,6 +243,11 @@ body {
   margin-top: 15px;
   color: #438185;
   background-color: rgba(255, 255, 255, 0.1);
+  border-color: transparent; }
+
+.login-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #438185;
   border-color: transparent; }
 
 .form-label {
