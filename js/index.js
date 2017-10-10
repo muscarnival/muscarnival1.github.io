@@ -42,7 +42,7 @@ function login () {
   var password = $(".password")[0].value
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function() {
-      window.location = 'https://muscarnival.github.io/video.html'
+      window.location = 'https://muscarnival.github.io/waiver.html'
     })
     .catch(function(error) {
     // Handle Errors here.
