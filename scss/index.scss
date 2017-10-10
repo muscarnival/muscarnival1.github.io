@@ -178,6 +178,54 @@ a {
   }
 }
 
+.waiverhead {
+  display: table;
+
+  width: 100%;
+  height: auto;
+  padding: 200px 0;
+
+  text-align: center;
+
+  color: white;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  .intro-body {
+    display: table-cell;
+    vertical-align: middle;
+    .brand-heading {
+      font-size: 80px;
+      color: #e0a0a3;
+      font-family: 'Lobster', cursive;
+      background: rgba(0,0,0,0.8);
+      padding: 50px;
+      padding-bottom: 0;
+      border: 6px solid #e0a0a3;
+      border-radius: 100% !important;
+    }
+    .intro-text {
+      font-size: 26px;
+      color: #dc999c;
+      font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+  }
+  @media(min-width:768px) {
+    height: 100%;
+    padding: 0;
+    .intro-body {
+      .brand-heading {
+        font-size: 100px;
+      }
+      .intro-text {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
 .btn-circle {
   font-size: 50px;
 
@@ -342,4 +390,10 @@ body {
   width: 0px;
   border: none;
   font-size: 0px;
+}
+
+video {
+  padding-top: 50px;
+  width: 100%;
+  height: auto;
 }

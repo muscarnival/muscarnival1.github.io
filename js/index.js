@@ -41,8 +41,8 @@ function login () {
   var email = $(".email")[0].value
   var password = $(".password")[0].value
   firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(function() {
-      window.location = 'https://muscarnival.github.io/waiver.html'
+    .then(function(response) {
+      window.location = 'http://localhost:3000/waiver.html'
     })
     .catch(function(error) {
     // Handle Errors here.
