@@ -137,30 +137,29 @@ a {
   text-align: center;
 
   color: white;
-  background: url('../img/carnival-bg.jpg') no-repeat bottom center scroll;
+  //background: url('../img/carnival-bg.jpg') no-repeat bottom center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  -webkit-filter: hue-rotate(150deg) contrast(1);
-  filter: hue-rotate(180deg) contrast(1);
+  //-webkit-filter: hue-rotate(150deg) contrast(1);
+  //filter: hue-rotate(180deg) contrast(1);
   .intro-body {
     display: table-cell;
     vertical-align: middle;
     .brand-heading {
       font-size: 80px;
-      color: #e0a0a3;
+      color:  #438185;
       font-family: 'Lobster', cursive;
       background: rgba(0,0,0,0.8);
-      padding: 50px;
-      padding-bottom: 0;
-      border: 6px solid #e0a0a3;
+      padding: 60px;
+      border: 10px solid  #438185;
       border-radius: 100% !important;
     }
     .intro-text {
       font-size: 26px;
-      color: #dc999c;
+      color:  #438185;
       font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
   }
@@ -198,17 +197,17 @@ a {
     vertical-align: middle;
     .brand-heading {
       font-size: 80px;
-      color: #e0a0a3;
+      color:  #438185;
       font-family: 'Lobster', cursive;
       background: rgba(0,0,0,0.8);
       padding: 50px;
       padding-bottom: 0;
-      border: 6px solid #e0a0a3;
+      border: 6px solid  #438185;
       border-radius: 100% !important;
     }
     .intro-text {
       font-size: 26px;
-      color: #dc999c;
+      color:  #438185;
       font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
   }
@@ -238,8 +237,8 @@ a {
   -moz-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
 
-  color: #e0a0a3;
-  border: 6px solid #e0a0a3;
+  color:  #438185;
+  border: 6px solid  #438185;
   border-radius: 100% !important;
   background: rgba(0,0,0,0.6);
   &:hover {
@@ -251,16 +250,6 @@ a {
 .content-section {
   padding-top: 150px;
   padding-bottom: 150px;
-}
-
-.download-section {
-  color: white;
-  background: url('../img/beer-pong.jpg') no-repeat center center scroll;
-  background-color: black;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 #map {
@@ -418,4 +407,63 @@ video {
   height: 38px;
   margin: 0 auto;
   border-radius: 3px;
+}
+
+.rainbow {
+  -webkit-animation:rainbow 5s infinite;
+  -ms-animation:rainbow 5s infinite;
+  -o-animation:rainbow 5s infinite;
+  animation:rainbow 5s infinite;
+}
+@-webkit-keyframes rainbow {
+  0% {color: #ff0000;}
+  10% {color: #ff8000;}
+  20% {color: #ffff00;}
+  30% {color: #80ff00;}
+  40% {color: #00ff00;}
+  50% {color: #00ff80;}
+  60% {color: #00ffff;}
+  70% {color: #0080ff;}
+  80% {color: #0000ff;}
+  90% {color: #8000ff;}
+  100% {color: #ff0080;}
+}
+@-ms-keyframes rainbow {
+  0% {color: #ff0000;}
+  10% {color: #ff8000;}
+  20% {color: #ffff00;}
+  30% {color: #80ff00;}
+  40% {color: #00ff00;}
+  50% {color: #00ff80;}
+  60% {color: #00ffff;}
+  70% {color: #0080ff;}
+  80% {color: #0000ff;}
+  90% {color: #8000ff;}
+  100% {color: #ff0080;}
+}
+@-o-keyframes rainbow {
+  0% {color: #ff0000;}
+  10% {color: #ff8000;}
+  20% {color: #ffff00;}
+  30% {color: #80ff00;}
+  40% {color: #00ff00;}
+  50% {color: #00ff80;}
+  60% {color: #00ffff;}
+  70% {color: #0080ff;}
+  80% {color: #0000ff;}
+  90% {color: #8000ff;}
+  100% {color: #ff0080;}
+}
+@keyframes rainbow {
+  0% {color: #ff0000;}
+  10% {color: #ff8000;}
+  20% {color: #ffff00;}
+  30% {color: #80ff00;}
+  40% {color: #00ff00;}
+  50% {color: #00ff80;}
+  60% {color: #00ffff;}
+  70% {color: #0080ff;}
+  80% {color: #0000ff;}
+  90% {color: #8000ff;}
+  100% {color: #ff0080;}
 }

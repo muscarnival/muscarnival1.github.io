@@ -31,16 +31,14 @@ function login () {
   var email = $(".email")[0].value
   var password = $(".password")[0].value
   firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(function(response) {
+    .then(function() {
       window.location = 'https://muscarnival.github.io/waiver.html'
     })
     .catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
     var errorMessage = error.message;
     if (error) {
       console.log(error)
-      alert(error.message)
+      alert(errorMessage)
     }
   })
 }
