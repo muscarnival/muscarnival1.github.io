@@ -418,6 +418,14 @@ video {
   animation-timing-function: ease-in-out;
 }
 
+.rainbow-background {
+  -webkit-animation:rainbow-background 5s infinite;
+  -ms-animation:rainbow-background 5s infinite;
+  -o-animation:rainbow-background 5s infinite;
+  animation:rainbow-background 5s infinite;
+  animation-timing-function: ease-in-out;
+}
+
 .rainbow-border {
   -webkit-animation:rainbow-border 5s infinite;
   -ms-animation:rainbow-border 5s infinite;
@@ -557,4 +565,18 @@ video {
   20% {border-color: #0000ff;}
   10% {border-color: #8000ff;}
   0% {border-color: #ff0080;}
+}
+
+@-webkit-keyframes rainbow-background {
+  100% {background-color: #ff0000;}
+  90% {background-color: #ff8000;}
+  80% {background-color: #ffff00;}
+  70% {background-color: #80ff00;}
+  60% {background-color: #00ff00;}
+  50% {background-color: #00ff80;}
+  40% {background-color: #00ffff;}
+  30% {background-color: #0080ff;}
+  20% {background-color: #0000ff;}
+  10% {background-color: #8000ff;}
+  0% {background-color: #ff0080;}
 }

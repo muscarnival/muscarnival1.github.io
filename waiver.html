@@ -97,10 +97,9 @@
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       $("#page-top").removeClass("hide")
-      console.log(user)
+      window.location = 'https://muscarnival.github.io/'
     } else {
       window.location = 'https://muscarnival.github.io/'
-      alert('You must log in first!')
     }
   })
 </script>
