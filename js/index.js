@@ -32,7 +32,9 @@ function login () {
   var password = $(".password")[0].value
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function() {
-      window.location = 'https://muscarnival.github.io/waiver.html'
+      // window.location = 'http://localhost:3000/waiver.html'
+      $(".waiverhead").removeClass("hide")
+      showForm(".waiverhead")
     })
     .catch(function(error) {
     var errorMessage = error.message;

@@ -112,7 +112,8 @@ a {
       font-size: 80px;
       color: #438185;
       font-family: 'Lobster', cursive;
-      padding: 60px; }
+      padding: 60px;
+      margin: 0; }
     .masthead .intro-body .intro-text {
       font-size: 26px;
       color: #438185;
@@ -122,7 +123,8 @@ a {
       height: 100%;
       padding: 0; }
       .masthead .intro-body .brand-heading {
-        font-size: 100px; }
+        font-size: 100px;
+        margin: 0; }
       .masthead .intro-body .intro-text {
         font-size: 22px; } }
 
@@ -269,7 +271,7 @@ body {
   color: #438185; }
 
 .hide {
-  display: none; }
+  display: none !important; }
 
 video {
   padding-top: 50px;

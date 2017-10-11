@@ -12,12 +12,12 @@ function submitForm () {
 function videoEnd () {
   // alert("video ended")
   $("#waiver").removeClass("hide")
-  showForm()
+  showForm("#waiver")
 }
 
-function showForm () {
+function showForm (form) {
   $('html, body').animate({
-    scrollTop: $("#waiver").offset().top
+    scrollTop: $(form).offset().top
   }, 1000,  "easeInOutExpo");
 }
 

@@ -28,7 +28,7 @@
 <body id="page-top">
 
 <!-- Intro Header -->
-<header class="waiverhead">
+<header class="waiverhead hide">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 mx-auto">
@@ -53,7 +53,7 @@
 </header>
 
 <!-- Form Section -->
-<section id="waiver" class="waiver-section text-center">
+<section id="waiver" class="waiver-section text-center hide">
     <div class="container">
         <form>
             <div class="form-group">
@@ -77,7 +77,7 @@
                 <input type="date" class="form-control address" id="date" placeholder="">
             </div>
         </form>
-        <button type="submit" onclick="submitForm()" class="btn login-btn">Submit</button>
+        <button type="submit" onclick="submitForm()" class="btn login-btn rainbow">Submit</button>
     </div>
 </section>
 
@@ -94,8 +94,9 @@
     messagingSenderId: "649034251506"
   };
   firebase.initializeApp(config)
-  firebase.auth().currentUser(function(user) {
+  firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
+      $("#page-top").removeClass("hide")
       console.log(user)
     } else {
       window.location = 'https://muscarnival.github.io/'
