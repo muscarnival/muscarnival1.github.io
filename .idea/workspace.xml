@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ccc9b6b7-1bfb-4ce1-aa60-0110ba19ebc9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.min.css" afterPath="$PROJECT_DIR$/css/index.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scss/index.scss" afterPath="$PROJECT_DIR$/scss/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,8 +26,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="164">
-                  <caret line="131" column="25" lean-forward="false" selection-start-line="131" selection-start-column="25" selection-end-line="131" selection-end-column="25" />
+                <state relative-caret-position="150">
+                  <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
@@ -127,6 +125,7 @@
       <find>&lt;h</find>
       <find>brand-</find>
       <find>btn-</find>
+      <find>navb</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -145,8 +144,8 @@
         <option value="$PROJECT_DIR$/waiver.html" />
         <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scss/index.scss" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -316,12 +315,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1507317311717</updated>
-      <workItem from="1507317313410" duration="26587000" />
+      <workItem from="1507317313410" duration="26684000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26587000" />
+    <option name="totallyTimeSpent" value="26684000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -456,18 +455,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="131" column="25" lean-forward="false" selection-start-line="131" selection-start-column="25" selection-end-line="131" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scss/index.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
           <caret line="358" column="32" lean-forward="false" selection-start-line="358" selection-start-column="32" selection-end-line="358" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
           <folding />
         </state>
       </provider>
