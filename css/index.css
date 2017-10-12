@@ -15,28 +15,6 @@ html {
   width: 100%;
   height: 100%; }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  margin: 0 0 35px;
-  letter-spacing: 1px;
-  text-transform: uppercase; }
-
-p {
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 0 0 25px; }
-  @media (min-width: 768px) {
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-      margin: 0 0 35px; } }
-
 a {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -112,7 +90,10 @@ a {
       color: #438185;
       font-family: 'Lobster', cursive;
       padding: 60px;
-      margin: 0; }
+      margin: 0;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700; }
     .masthead .intro-body .intro-text {
       font-size: 26px;
       color: #438185;
@@ -310,24 +291,24 @@ video {
   margin-bottom: 50px; }
 
 .rainbow {
-  -webkit-animation: rainbow 5s infinite;
-  -ms-animation: rainbow 5s infinite;
-  -o-animation: rainbow 5s infinite;
-  animation: rainbow 5s infinite;
+  -webkit-animation: rainbow 10s infinite;
+  -ms-animation: rainbow 10s infinite;
+  -o-animation: rainbow 10s infinite;
+  animation: rainbow 10s infinite;
   animation-timing-function: ease-in-out; }
 
 .rainbow-background {
-  -webkit-animation: rainbow-background 5s infinite;
-  -ms-animation: rainbow-background 5s infinite;
-  -o-animation: rainbow-background 5s infinite;
-  animation: rainbow-background 5s infinite;
+  -webkit-animation: rainbow-background 10s infinite;
+  -ms-animation: rainbow-background 10s infinite;
+  -o-animation: rainbow-background 10s infinite;
+  animation: rainbow-background 10s infinite;
   animation-timing-function: ease-in-out; }
 
 .rainbow-border {
   -webkit-animation: rainbow-border 5s infinite;
   -ms-animation: rainbow-border 5s infinite;
   -o-animation: rainbow-border 5s infinite;
-  animation: rainbow-border 5s infinite;
+  animation: rainbow-border 10s infinite;
   animation-timing-function: ease-in-out; }
 
 @-webkit-keyframes rainbow {
@@ -364,9 +345,9 @@ video {
   85% {
     color: #6700ff; }
   90% {
-    color: #8000ff; }
+    color: #a100ff; }
   100% {
-    color: #ff0080; } }
+    color: #ff0059; } }
 
 @-ms-keyframes rainbow {
   0% {
@@ -402,9 +383,9 @@ video {
   85% {
     color: #6700ff; }
   90% {
-    color: #8000ff; }
+    color: #a100ff; }
   100% {
-    color: #ff0080; } }
+    color: #ff0059; } }
 
 @-o-keyframes rainbow {
   0% {
@@ -440,9 +421,9 @@ video {
   85% {
     color: #6700ff; }
   90% {
-    color: #8000ff; }
+    color: #a100ff; }
   100% {
-    color: #ff0080; } }
+    color: #ff0059; } }
 
 @keyframes rainbow {
   0% {
@@ -478,126 +459,310 @@ video {
   85% {
     color: #6700ff; }
   90% {
-    color: #8000ff; }
+    color: #a100ff; }
   100% {
-    color: #ff0080; } }
+    color: #ff0059; } }
 
 @-webkit-keyframes rainbow-border {
   100% {
     border-color: #ff0000; }
   90% {
+    border-color: #ff3000; }
+  85% {
     border-color: #ff8000; }
   80% {
+    border-color: #ffb200; }
+  75% {
     border-color: #ffff00; }
   70% {
+    border-color: #c9ff00; }
+  65% {
     border-color: #80ff00; }
   60% {
     border-color: #00ff00; }
   50% {
     border-color: #00ff80; }
+  45% {
+    border-color: #00ffc3; }
   40% {
-    border-color: #00ffff; }
-  30% {
+    border-color: #00d9ff; }
+  35% {
     border-color: #0080ff; }
+  30% {
+    border-color: #0054ff; }
+  25% {
+    border-color: #0019ff; }
   20% {
-    border-color: #0000ff; }
+    border-color: #3200ff; }
+  15% {
+    border-color: #6700ff; }
   10% {
-    border-color: #8000ff; }
+    border-color: #a100ff; }
   0% {
-    border-color: #ff0080; } }
+    border-color: #ff0059; } }
 
 @-ms-keyframes rainbow-border {
   100% {
     border-color: #ff0000; }
   90% {
+    border-color: #ff3000; }
+  85% {
     border-color: #ff8000; }
   80% {
+    border-color: #ffb200; }
+  75% {
     border-color: #ffff00; }
   70% {
+    border-color: #c9ff00; }
+  65% {
     border-color: #80ff00; }
   60% {
     border-color: #00ff00; }
   50% {
     border-color: #00ff80; }
+  45% {
+    border-color: #00ffc3; }
   40% {
-    border-color: #00ffff; }
-  30% {
+    border-color: #00d9ff; }
+  35% {
     border-color: #0080ff; }
+  30% {
+    border-color: #0054ff; }
+  25% {
+    border-color: #0019ff; }
   20% {
-    border-color: #0000ff; }
+    border-color: #3200ff; }
+  15% {
+    border-color: #6700ff; }
   10% {
-    border-color: #8000ff; }
+    border-color: #a100ff; }
   0% {
-    border-color: #ff0080; } }
+    border-color: #ff0059; } }
 
 @-o-keyframes rainbow-border {
   100% {
     border-color: #ff0000; }
   90% {
+    border-color: #ff3000; }
+  85% {
     border-color: #ff8000; }
   80% {
+    border-color: #ffb200; }
+  75% {
     border-color: #ffff00; }
   70% {
+    border-color: #c9ff00; }
+  65% {
     border-color: #80ff00; }
   60% {
     border-color: #00ff00; }
   50% {
     border-color: #00ff80; }
+  45% {
+    border-color: #00ffc3; }
   40% {
-    border-color: #00ffff; }
-  30% {
+    border-color: #00d9ff; }
+  35% {
     border-color: #0080ff; }
+  30% {
+    border-color: #0054ff; }
+  25% {
+    border-color: #0019ff; }
   20% {
-    border-color: #0000ff; }
+    border-color: #3200ff; }
+  15% {
+    border-color: #6700ff; }
   10% {
-    border-color: #8000ff; }
+    border-color: #a100ff; }
   0% {
-    border-color: #ff0080; } }
+    border-color: #ff0059; } }
 
 @keyframes rainbow-border {
   100% {
     border-color: #ff0000; }
   90% {
+    border-color: #ff3000; }
+  85% {
     border-color: #ff8000; }
   80% {
+    border-color: #ffb200; }
+  75% {
     border-color: #ffff00; }
   70% {
+    border-color: #c9ff00; }
+  65% {
     border-color: #80ff00; }
   60% {
     border-color: #00ff00; }
   50% {
     border-color: #00ff80; }
+  45% {
+    border-color: #00ffc3; }
   40% {
-    border-color: #00ffff; }
-  30% {
+    border-color: #00d9ff; }
+  35% {
     border-color: #0080ff; }
+  30% {
+    border-color: #0054ff; }
+  25% {
+    border-color: #0019ff; }
   20% {
-    border-color: #0000ff; }
+    border-color: #3200ff; }
+  15% {
+    border-color: #6700ff; }
   10% {
-    border-color: #8000ff; }
+    border-color: #a100ff; }
   0% {
-    border-color: #ff0080; } }
+    border-color: #ff0059; } }
 
 @-webkit-keyframes rainbow-background {
   100% {
     background-color: #ff0000; }
   90% {
+    background-color: #ff3000; }
+  85% {
     background-color: #ff8000; }
   80% {
+    background-color: #ffb200; }
+  75% {
     background-color: #ffff00; }
   70% {
+    background-color: #c9ff00; }
+  65% {
     background-color: #80ff00; }
   60% {
     background-color: #00ff00; }
   50% {
     background-color: #00ff80; }
+  45% {
+    background-color: #00ffc3; }
   40% {
-    background-color: #00ffff; }
-  30% {
+    background-color: #00d9ff; }
+  35% {
     background-color: #0080ff; }
+  30% {
+    background-color: #0054ff; }
+  25% {
+    background-color: #0019ff; }
   20% {
-    background-color: #0000ff; }
+    background-color: #3200ff; }
+  15% {
+    background-color: #6700ff; }
   10% {
-    background-color: #8000ff; }
+    background-color: #a100ff; }
   0% {
-    background-color: #ff0080; } }
+    background-color: #ff0059; } }
+
+@-ms-keyframes rainbow-background {
+  100% {
+    background-color: #ff0000; }
+  90% {
+    background-color: #ff3000; }
+  85% {
+    background-color: #ff8000; }
+  80% {
+    background-color: #ffb200; }
+  75% {
+    background-color: #ffff00; }
+  70% {
+    background-color: #c9ff00; }
+  65% {
+    background-color: #80ff00; }
+  60% {
+    background-color: #00ff00; }
+  50% {
+    background-color: #00ff80; }
+  45% {
+    background-color: #00ffc3; }
+  40% {
+    background-color: #00d9ff; }
+  35% {
+    background-color: #0080ff; }
+  30% {
+    background-color: #0054ff; }
+  25% {
+    background-color: #0019ff; }
+  20% {
+    background-color: #3200ff; }
+  15% {
+    background-color: #6700ff; }
+  10% {
+    background-color: #a100ff; }
+  0% {
+    background-color: #ff0059; } }
+
+@-o-keyframes rainbow-background {
+  100% {
+    background-color: #ff0000; }
+  90% {
+    background-color: #ff3000; }
+  85% {
+    background-color: #ff8000; }
+  80% {
+    background-color: #ffb200; }
+  75% {
+    background-color: #ffff00; }
+  70% {
+    background-color: #c9ff00; }
+  65% {
+    background-color: #80ff00; }
+  60% {
+    background-color: #00ff00; }
+  50% {
+    background-color: #00ff80; }
+  45% {
+    background-color: #00ffc3; }
+  40% {
+    background-color: #00d9ff; }
+  35% {
+    background-color: #0080ff; }
+  30% {
+    background-color: #0054ff; }
+  25% {
+    background-color: #0019ff; }
+  20% {
+    background-color: #3200ff; }
+  15% {
+    background-color: #6700ff; }
+  10% {
+    background-color: #a100ff; }
+  0% {
+    background-color: #ff0059; } }
+
+@keyframes rainbow-background {
+  100% {
+    background-color: #ff0000; }
+  90% {
+    background-color: #ff3000; }
+  85% {
+    background-color: #ff8000; }
+  80% {
+    background-color: #ffb200; }
+  75% {
+    background-color: #ffff00; }
+  70% {
+    background-color: #c9ff00; }
+  65% {
+    background-color: #80ff00; }
+  60% {
+    background-color: #00ff00; }
+  50% {
+    background-color: #00ff80; }
+  45% {
+    background-color: #00ffc3; }
+  40% {
+    background-color: #00d9ff; }
+  35% {
+    background-color: #0080ff; }
+  30% {
+    background-color: #0054ff; }
+  25% {
+    background-color: #0019ff; }
+  20% {
+    background-color: #3200ff; }
+  15% {
+    background-color: #6700ff; }
+  10% {
+    background-color: #a100ff; }
+  0% {
+    background-color: #ff0059; } }
