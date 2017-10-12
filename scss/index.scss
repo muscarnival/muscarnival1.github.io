@@ -88,7 +88,6 @@ a {
       -moz-transition: background 0.3s ease-in-out;
       transition: background 0.3s ease-in-out;
       &:hover {
-        color: fade(white, 80%);
         outline: none;
         background-color: transparent;
       }
