@@ -30,11 +30,6 @@ function login () {
 
 var video = document.getElementById("waiverVideo")
 
-function submitForm () {
-  console.log("submit")
-
-}
-
 function videoEnd () {
   // alert("video ended")
   $("#waiver-info").removeClass("hide")
@@ -62,6 +57,17 @@ function progressBar () {
   var elem = document.getElementById("myBar")
   elem.style.width = curProgress + '%';
   elem.innerHTML = curProgress  + '%';
+}
+function submitWaiver () {
+  var name = $(".name")[0].value
+  var address = $(".address")[0].value
+  var telephone = $(".telephone")[0].value
+  var birthday = $(".birthday")[0].value
+  name == "" ? alert("Please input your name!")
+    : address == "" ? alert("Please input your address!")
+    : telephone == "" ? alert("Please input your telephone!")
+    : birthday == "" ? alert("Please input your birthday!") : null
+
 }
 
 (function($) {
