@@ -108,18 +108,9 @@
     </section>
 
     <!-- Form Section -->
-    <section id="waiver" class="waiver-section text-center">
+    <section id="waiver" class="waiver-section text-center hide">
       <div class="container login-container rainbow-border">
         <form>
-          <div class="form-group">
-            <label class="form-label rainbow" for="team">Carnival Team</label>
-            <select class="form-control team" id="team">
-              <option>My</option>
-              <option>Life</option>
-              <option>Its</option>
-              <option>Potatoes</option>
-            </select>
-          </div>
           <div class="form-group">
             <label class="form-label rainbow" for="name">Participant Name</label>
             <input type="name" class="form-control name" id="name" aria-describedby="emailHelp" placeholder="Name">
@@ -148,10 +139,10 @@
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
-    <script>
-
+    <script async defer src="https://apis.google.com/js/api.js"
+            onload="this.onload=function(){};handleClientLoad()"
+            onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
-
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>

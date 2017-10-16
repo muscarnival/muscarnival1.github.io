@@ -58,7 +58,6 @@ function progressBar () {
   elem.innerHTML = curProgress  + '%';
 }
 function submitWaiver () {
-  var team = $(".team")[0].value
   var name = $(".name")[0].value
   var address = $(".address")[0].value
   var telephone = $(".telephone")[0].value
@@ -75,7 +74,8 @@ function submitWaiver () {
     address: address,
     telephone: telephone,
     birthday: birthday,
-    waiverComplete: true
+    waiverComplete: true,
+    timeCompleted: Date.now()
   }
   firebase.database().ref('/teams/' + team + '/'+ userId).set(user)
 }
