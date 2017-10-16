@@ -53,21 +53,31 @@ function progressBar () {
   curTime = video.currentTime
   duration = video.duration
   curProgress = Math.round(curTime/duration * 100)
-  console.log(curProgress)
   var elem = document.getElementById("myBar")
   elem.style.width = curProgress + '%';
   elem.innerHTML = curProgress  + '%';
 }
 function submitWaiver () {
+  var team = $(".team")[0].value
   var name = $(".name")[0].value
   var address = $(".address")[0].value
   var telephone = $(".telephone")[0].value
   var birthday = $(".birthday")[0].value
-  name == "" ? alert("Please input your name!")
+  var email = firebase.auth().currentUser.email;
+  var userId = firebase.auth().currentUser.uid;
+  team == "" ? alert("Please input your name!")
+    : name == "" ? alert("Please input your name!")
     : address == "" ? alert("Please input your address!")
     : telephone == "" ? alert("Please input your telephone!")
     : birthday == "" ? alert("Please input your birthday!") : null
-
+  var user = {
+    name: name,
+    address: address,
+    telephone: telephone,
+    birthday: birthday,
+    waiverComplete: true
+  }
+  firebase.database().ref('/teams/' + team + '/'+ userId).set(user)
 }
 
 (function($) {
