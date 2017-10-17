@@ -200,7 +200,8 @@ function submitWaiver () {
   }
   firebase.database().ref('/participants/' + userId).update(user)
     .then(function (val) {
-      alert('Waiver successfully submitted, fill er up bahd!')
+      $(".thank-you").removeClass("hide")
+      showForm(".thank-you")
     })
     .catch(function(err) {
       alert('There was a problem submitting the waiver!')
