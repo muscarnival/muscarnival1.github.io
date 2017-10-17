@@ -157,4 +157,6 @@ function submitWaiver () {
     target: '#mainNav',
     offset: 54
   });
+
+  $(window).blur(pauseVideo)
 })(jQuery); // End of use strict
