@@ -28,6 +28,53 @@ function login () {
   })
 }
 
+function loginAdmin () {
+  var email = $(".email")[0].value
+  var password = $(".password")[0].value
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(function() {
+      // window.location = 'http://localhost:3000/waiver.html'
+      if (firebase.auth().currentUser.email == 'carnival@musonline.com') {
+        loadTable()
+        $(".table-container").removeClass("hide")
+        showForm(".table-container")
+      }
+      else {
+        alert("You are not authorized to see this page!")
+        window.location = 'https://muscarnival.github.io'
+      }
+    })
+    .catch(function(error) {
+      var errorMessage = error.message;
+      if (error) {
+        alert("You are not authorized to see this page!")
+        window.location = 'https://muscarnival.github.io'
+      }
+    })
+}
+function loadTable () {
+  firebase.database().ref('/participants/').once('value').then(function(snapshot) {
+    var participants = snapshot.val()
+    var names = Object.keys(participants)
+    names.map(function(name) {
+      var table = document.getElementById("participant-table")
+      var participant = participants[name]
+      var row = table.insertRow(1)
+      var name = row.insertCell(0)
+      var email = row.insertCell(1)
+      var team = row.insertCell(2)
+      var waiverComplete = row.insertCell(3)
+      name.innerHTML = participant.Name
+      email.innerHTML = participant.Email
+      team.innerHTML = participant.Team
+      if (participant.Email == "") {
+        row.style = "background-color: rgba(255, 0, 0, 0.5)"
+      }
+      waiverComplete.innerHTML = participant.waiverComplete === true ? 'True' : 'False'
+    })
+  });
+}
+
 var video = document.getElementById("waiverVideo")
 
 function videoEnd () {
@@ -36,13 +83,11 @@ function videoEnd () {
   $("#waiver").removeClass("hide")
   showForm("#waiver-info")
 }
-
 function showForm (form) {
   $('html, body').animate({
     scrollTop: $(form).offset().top
   }, 1000,  "easeInOutExpo");
 }
-
 function playVideo () {
   video.play()
 }

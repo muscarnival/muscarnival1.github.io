@@ -1,45 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Admin</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<div class="container">
-    <h2>Striped Rows</h2>
-    <p>The .table-striped class adds zebra-stripes to a table:</p>
-    <table class="table table-striped">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/index.min.css" rel="stylesheet">
+</head>
+<body class="admin">
+<section id="login" class="content-section text-center">
+    <div class="container login-container">
+        <form>
+            <div class="form-group">
+                <label class="form-label" for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control password" id="exampleInputPassword1" placeholder="Password">
+            </div>
+        </form>
+        <button type="submit" onclick="loginAdmin()" class="btn">Submit</button>
+    </div>
+</section>
+<div class="container table-container hide">
+    <h2>Participants</h2>
+    <table class="table table-striped" id="participant-table">
         <thead>
         <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
+            <th>Name</th>
             <th>Email</th>
+            <th>Team</th>
+            <th>Waiver Complete</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-        </tr>
-        <tr>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>mary@example.com</td>
-        </tr>
-        <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
-        </tr>
+
         </tbody>
     </table>
 </div>
 
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/popper/popper.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/index.min.js"></script>
 </body>
 </html>

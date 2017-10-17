@@ -237,7 +237,7 @@ body {
   border-color: transparent !important; }
 
 .form-label {
-  color: #438185; }
+  color: black; }
 
 .hide {
   display: none !important; }
@@ -284,6 +284,14 @@ video {
   border: 10px solid  #438185;
   border-radius: 100% !important;
   margin-bottom: 50px; }
+
+.admin {
+  font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: black;
+  background-color: white; }
 
 .rainbow {
   -webkit-animation: rainbow 10s infinite;
