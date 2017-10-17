@@ -81,6 +81,10 @@ function loadTable () {
         text: team,
         value: index
       }))
+      $("#select-new-team").append($('<option>', {
+        text: team,
+        value: index
+      }))
     })
     masterTable = participants
     curTable = participants
@@ -112,6 +116,35 @@ function updateTable (participants, filter) {
     waiverComplete.innerHTML = participant.waiverComplete === true ? 'True' : 'False'
   })
   return teams
+}
+function createParticipant () {
+  var team = $("#select-new-team option:selected")[0].label
+  var name = $(".new-name")[0].value
+  var email = $(".new-email")[0].value
+  var user = {
+    Name: name,
+    Email: email,
+    Team: team,
+    waiverComplete: false
+  }
+  firebase.auth().createUserWithEmailAndPassword(email, 'hype2017')
+    .then(function (newUser) {
+      var userId = newUser.uid
+      console.log(userId)
+      firebase.database().ref('/participants/' + userId).update(user)
+        .then(function (val) {
+          alert('User successfully added!')
+        })
+        .catch(function(err) {
+          alert('There was a problem adding the user!')
+        })
+    })
+    .catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    alert(errorMessage)
+  });
 }
 
 var video = document.getElementById("waiverVideo")
@@ -153,7 +186,7 @@ function submitWaiver () {
     : telephone == "" ? alert("Please input your telephone!")
     : birthday == "" ? alert("Please input your birthday!") : null
   var user = {
-    name: name,
+    Name: name,
     address: address,
     telephone: telephone,
     birthday: birthday,
