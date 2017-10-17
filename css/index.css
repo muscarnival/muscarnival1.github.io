@@ -108,9 +108,9 @@ a {
       color: #438185;
       font-family: 'Lobster', cursive;
       padding: 60px;
+      padding-bottom: 10px;
       margin: 0;
       letter-spacing: 1px;
-      text-transform: uppercase;
       font-weight: 700; }
     .masthead .intro-body .intro-text {
       font-size: 26px;
@@ -305,6 +305,11 @@ video {
   font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: none;
   color: black; }
+
+.brand-subheading {
+  font-family: 'Lobster', cursive;
+  font-size: 50px;
+  padding-bottom: 60px; }
 
 .rainbow {
   -webkit-animation: rainbow 10s infinite;
