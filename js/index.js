@@ -17,7 +17,6 @@ function login () {
   var password = $(".password")[0].value
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function() {
-      // window.location = 'http://localhost:3000/waiver.html'
       $(".waiverhead").removeClass("hide")
       showForm(".waiverhead")
     })
@@ -35,7 +34,6 @@ function loginAdmin () {
   var password = $(".password")[0].value
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function() {
-      // window.location = 'http://localhost:3000/waiver.html'
       if (firebase.auth().currentUser.email == 'carnival@musonline.com') {
         loadTable()
         $(".table-container").removeClass("hide")
