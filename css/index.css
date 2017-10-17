@@ -193,16 +193,6 @@ a {
   text-transform: uppercase;
   border-radius: 3px; }
 
-::-moz-selection {
-  background: #fcfcfc;
-  background: rgba(255, 255, 255, 0.2);
-  text-shadow: none; }
-
-::selection {
-  background: #fcfcfc;
-  background: rgba(255, 255, 255, 0.2);
-  text-shadow: none; }
-
 img::selection {
   background: transparent; }
 

@@ -252,18 +252,6 @@ a {
   border-radius: 3px;
 }
 
-::-moz-selection {
-  background: #fcfcfc;
-  background: fade-out(white, .8);
-  text-shadow: none;
-}
-
-::selection {
-  background: #fcfcfc;
-  background: fade-out(white, .8);
-  text-shadow: none;
-}
-
 img::selection {
   background: transparent;
 }
