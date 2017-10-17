@@ -62,10 +62,9 @@ function submitWaiver () {
   var address = $(".address")[0].value
   var telephone = $(".telephone")[0].value
   var birthday = $(".birthday")[0].value
-  var email = firebase.auth().currentUser.email;
   var userId = firebase.auth().currentUser.uid;
-  team == "" ? alert("Please input your name!")
-    : name == "" ? alert("Please input your name!")
+  var date = new Date()
+  name == "" ? alert("Please input your name!")
     : address == "" ? alert("Please input your address!")
     : telephone == "" ? alert("Please input your telephone!")
     : birthday == "" ? alert("Please input your birthday!") : null
@@ -75,9 +74,15 @@ function submitWaiver () {
     telephone: telephone,
     birthday: birthday,
     waiverComplete: true,
-    timeCompleted: Date.now()
+    timeCompleted: date.toLocaleDateString()
   }
-  firebase.database().ref('/teams/' + team + '/'+ userId).set(user)
+  firebase.database().ref('/participants/' + userId).update(user)
+    .then(function (val) {
+      alert('Waiver successfully submitted, fill er up bahd!')
+    })
+    .catch(function(err) {
+      alert('There was a problem submitting the waiver!')
+    })
 }
 
 (function($) {
