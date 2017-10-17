@@ -119,6 +119,7 @@ function createParticipant () {
   var team = $("#select-new-team option:selected")[0].label
   var name = $(".new-name")[0].value
   var email = $(".new-email")[0].value
+  var oldId = name.replace(" ", "")
   var user = {
     Name: name,
     Email: email,
@@ -129,12 +130,18 @@ function createParticipant () {
     .then(function (newUser) {
       var userId = newUser.uid
       console.log(userId)
-      firebase.database().ref('/participants/' + userId).update(user)
-        .then(function (val) {
-          alert('User successfully added!')
+      firebase.database().ref('/participants/' + oldId).remove()
+        .then(function () {
+          firebase.database().ref('/participants/' + userId).update(user)
+            .then(function (val) {
+              alert('User successfully added!')
+            })
+            .catch(function(err) {
+              alert('There was a problem adding the user!')
+            })
         })
-        .catch(function(err) {
-          alert('There was a problem adding the user!')
+        .catch(function () {
+          alert('There was a problem removing the old user!')
         })
     })
     .catch(function(error) {
