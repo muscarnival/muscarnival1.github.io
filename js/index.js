@@ -9,6 +9,8 @@ var config = {
 };
 firebase.initializeApp(config);
 var database = firebase.database();
+var masterTable = []
+var curTable = []
 
 function login () {
   var email = $(".email")[0].value
@@ -55,24 +57,61 @@ function loginAdmin () {
 function loadTable () {
   firebase.database().ref('/participants/').once('value').then(function(snapshot) {
     var participants = snapshot.val()
-    var names = Object.keys(participants)
-    names.map(function(name) {
-      var table = document.getElementById("participant-table")
-      var participant = participants[name]
-      var row = table.insertRow(1)
-      var name = row.insertCell(0)
-      var email = row.insertCell(1)
-      var team = row.insertCell(2)
-      var waiverComplete = row.insertCell(3)
-      name.innerHTML = participant.Name
-      email.innerHTML = participant.Email
-      team.innerHTML = participant.Team
-      if (participant.Email == "") {
-        row.style = "background-color: rgba(255, 0, 0, 0.5)"
-      }
-      waiverComplete.innerHTML = participant.waiverComplete === true ? 'True' : 'False'
+    var teams = []
+    teams = updateTable(participants)
+    // names.map(function(name) {
+    //   var table = document.getElementById("participant-table")
+    //   var participant = participants[name]
+    //   var row = table.insertRow(1)
+    //   var name = row.insertCell(0)
+    //   var email = row.insertCell(1)
+    //   var team = row.insertCell(2)
+    //   var waiverComplete = row.insertCell(3)
+    //   name.innerHTML = participant.Name
+    //   email.innerHTML = participant.Email
+    //   team.innerHTML = participant.Team
+    //   teams.includes(participant.Team) ? null : teams.push(participant.Team)
+    //   if (participant.Email == "") {
+    //     row.style = "background-color: rgba(255, 0, 0, 0.5)"
+    //   }
+    //   waiverComplete.innerHTML = participant.waiverComplete === true ? 'True' : 'False'
+    // })
+    teams.map(function (team, index) {
+      $("#select-team").append($('<option>', {
+        text: team,
+        value: index
+      }))
     })
+    masterTable = participants
+    curTable = participants
   });
+}
+function updateTable (participants, filter) {
+  var names = Object.keys(participants)
+  if (filter) {
+    names = names.filter(function (name) {
+      return participants[name].Team == filter
+    })
+  }
+  var teams = []
+  names.map(function(name) {
+    var table = document.getElementById("participant-table")
+    var participant = participants[name]
+    var row = table.insertRow(0)
+    var name = row.insertCell(0)
+    var email = row.insertCell(1)
+    var team = row.insertCell(2)
+    var waiverComplete = row.insertCell(3)
+    name.innerHTML = participant.Name
+    email.innerHTML = participant.Email
+    team.innerHTML = participant.Team
+    teams.includes(participant.Team) ? null : teams.push(participant.Team)
+    if (participant.Email == "") {
+      row.style = "background-color: rgba(255, 0, 0, 0.3)"
+    }
+    waiverComplete.innerHTML = participant.waiverComplete === true ? 'True' : 'False'
+  })
+  return teams
 }
 
 var video = document.getElementById("waiverVideo")
@@ -157,6 +196,15 @@ function submitWaiver () {
     target: '#mainNav',
     offset: 54
   });
+  if (window.location.href === "http://localhost:3000/" || window.location.href === "https://muscarnival.github.io/") {
+    $(window).blur(pauseVideo)
+  }
+  else {
+    $("#select-team").change(function (event) {
+      var filter = $("select option:selected")[0].label
+      $("#participant-table tbody").empty()
+      updateTable(masterTable, filter)
+    })
+  }
 
-  $(window).blur(pauseVideo)
 })(jQuery); // End of use strict

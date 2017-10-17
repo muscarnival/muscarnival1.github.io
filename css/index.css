@@ -293,6 +293,9 @@ video {
   color: black;
   background-color: white; }
 
+.select-team {
+  font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
 .rainbow {
   -webkit-animation: rainbow 10s infinite;
   -ms-animation: rainbow 10s infinite;

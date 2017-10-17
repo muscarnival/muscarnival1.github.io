@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Admin</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Liam Vovk">
+
+    <title>Admin</title>
+
+    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <!-- Custom fonts for this template -->
@@ -32,8 +38,12 @@
     </div>
 </section>
 <div class="container table-container hide">
-    <h2>Participants</h2>
-    <table class="table table-striped" id="participant-table">
+    <div class="form-group">
+        <label class="select-team" for="select-team">Select Team:</label>
+        <select class="select-team form-control team-list" id="select-team">
+        </select>
+    </div>
+    <table class="table table-striped">
         <thead>
         <tr>
             <th>Name</th>
@@ -42,7 +52,7 @@
             <th>Waiver Complete</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="participant-table">
 
         </tbody>
     </table>
