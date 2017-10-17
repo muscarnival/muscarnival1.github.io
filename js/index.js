@@ -75,7 +75,7 @@ function loadTable () {
     //   waiverComplete.innerHTML = participant.waiverComplete === true ? 'True' : 'False'
     // })
     teams.map(function (team, index) {
-      $("#select-team").append($('<option>', {
+      $("#select-team-filter").append($('<option>', {
         text: team,
         value: index
       }))
@@ -231,9 +231,9 @@ function submitWaiver () {
     $(window).blur(pauseVideo)
   }
   else {
-    $("#select-team").change(function (event) {
-      var filter = $("select option:selected")[0].label
-      $("#participant-table tbody").empty()
+    $("#select-team-filter").change(function (event) {
+      var filter = $("#select-team-filter option:selected")[0].label
+      $("#participant-table").empty()
       updateTable(masterTable, filter)
     })
   }
