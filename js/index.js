@@ -111,6 +111,9 @@ function updateTable (participants, filter) {
     if (participant.Email == "") {
       row.style = "background-color: rgba(255, 0, 0, 0.3)"
     }
+    else if (participant.waiverComplete == true) {
+      row.style = "background-color: rgba(0, 255, 0, 0.3)"
+    }
     waiverComplete.innerHTML = participant.waiverComplete === true ? 'True' : 'False'
   })
   return teams
