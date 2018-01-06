@@ -38,7 +38,7 @@
         <button type="submit" onclick="loginAdmin()" class="btn">Submit</button>
     </div>
 </section>
-<div class="container table-container hide">
+<div class="container table-container">
     <form>
         <div class="form-group">
             <label class="select-team" for="select-new-team">Add Participant:</label>
@@ -58,11 +58,25 @@
             <button type="button" class="btn btn-info submit-new" onclick="createParticipant()">Submit</button>
         </div>
     </form>
-    <div class="form-group">
-        <label class="select-team" for="select-team-filter">Select Team:</label>
-        <select class="select-team form-control team-list" id="select-team-filter">
-            <option>Choose Team</option>
-        </select>
+    <div class="form-group flex-row">
+        <div class="filter">
+            <label class="select-team" for="select-team-filter">Select Team</label>
+            <select class="select-team form-control team-list" id="select-team-filter">
+                <option>Choose Team</option>
+            </select>
+        </div>
+        <div class="filter">
+            <label class="select-team" for="select-team-filter">Search Name</label>
+            <input id="search-name" type="search" class="form-control" name="search-name" placeholder="">
+        </div>
+        <div class="filter">
+            <label class="select-team" for="select-team-filter">Waiver Complete</label>
+            <select class="select-team form-control team-list" id="filter-complete">
+                <option>Show all</option>
+                <option>Show incomplete</option>
+                <option>Show complete</option>
+            </select>
+        </div>
     </div>
     <table class="table">
         <thead>

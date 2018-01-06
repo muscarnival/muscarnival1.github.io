@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - Grayscale v4.0.0-beta (https://startbootstrap.com/template-overviews/grayscale)
- * Copyright 2013-2017 Start Bootstrap
+ * Copyright 2013-2018 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
  */
 body {
@@ -318,6 +318,14 @@ video {
 .pledge {
   font-size: 50px;
   font-family: Lobster, cursive; }
+
+.flex-row {
+  display: flex;
+  flex-direction: row; }
+
+.filter {
+  width: 50%;
+  text-align: center; }
 
 .rainbow {
   -webkit-animation: rainbow 10s infinite;
