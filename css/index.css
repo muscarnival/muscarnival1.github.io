@@ -330,8 +330,7 @@ video {
   flex-direction: row; }
 
 .filter {
-  width: 50%;
-  text-align: center; }
+  width: 100%; }
 
 .rainbow {
   -webkit-animation: rainbow 10s infinite;
