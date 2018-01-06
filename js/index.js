@@ -53,7 +53,7 @@ function loginAdmin () {
     })
 }
 function loadTable () {
-  firebase.database().ref('/participants/').once('value').then(function(snapshot) {
+  firebase.database().ref('/carnival2018/participants/').once('value').then(function(snapshot) {
     var participants = snapshot.val()
     var teams = []
     teams = updateTable(participants)
@@ -133,9 +133,9 @@ function createParticipant () {
     .then(function (newUser) {
       var userId = newUser.uid
       console.log(userId)
-      firebase.database().ref('/participants/' + oldId).remove()
+      firebase.database().ref('/carnival2018/participants/' + oldId).remove()
         .then(function () {
-          firebase.database().ref('/participants/' + userId).update(user)
+          firebase.database().ref('/carnival2018/participants/' + userId).update(user)
             .then(function (val) {
               alert('User successfully added!')
             })
@@ -201,7 +201,7 @@ function submitWaiver () {
     waiverComplete: true,
     timeCompleted: date.toLocaleDateString()
   }
-  firebase.database().ref('/participants/' + userId).update(user)
+  firebase.database().ref('/carnival2018/participants/' + userId).update(user)
     .then(function (val) {
       $(".thank-you").removeClass("hide")
       showForm(".thank-you")
