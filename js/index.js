@@ -129,7 +129,7 @@ function createParticipant () {
     Team: team,
     waiverComplete: false
   }
-  firebase.auth().createUserWithEmailAndPassword(email, 'carnival2018')
+  firebase.auth().createUserWithEmailAndPassword(email, 'hype2017')
     .then(function (newUser) {
       var userId = newUser.uid
       console.log(userId)
