@@ -19,6 +19,20 @@ function login () {
     .then(function() {
       $(".waiverhead").removeClass("hide")
       showForm(".waiverhead")
+      firebase.database().ref('/carnival2018/participants/').once('value')
+        .then(function(snapshot) {
+          var participants = snapshot.val()
+          var ids = Object.keys(participants)
+          var cur_id = firebase.auth().currentUser.uid
+          var flag = false
+          ids.map(function(id) {
+            if (participants[id].Email == email & cur_id != id) {
+              var user = participants[id]
+              firebase.database().ref('/carnival2018/participants/' + cur_id).update(user)
+              firebase.database().ref('/carnival2018/participants/' + id).remove()
+            }
+          })
+        })
     })
     .catch(function(error) {
     var errorMessage = error.message;
@@ -52,28 +66,12 @@ function loginAdmin () {
       }
     })
 }
+
 function loadTable () {
   firebase.database().ref('/carnival2018/participants/').once('value').then(function(snapshot) {
     var participants = snapshot.val()
     var teams = []
     teams = updateTable(participants)
-    // names.map(function(name) {
-    //   var table = document.getElementById("participant-table")
-    //   var participant = participants[name]
-    //   var row = table.insertRow(1)
-    //   var name = row.insertCell(0)
-    //   var email = row.insertCell(1)
-    //   var team = row.insertCell(2)
-    //   var waiverComplete = row.insertCell(3)
-    //   name.innerHTML = participant.Name
-    //   email.innerHTML = participant.Email
-    //   team.innerHTML = participant.Team
-    //   teams.includes(participant.Team) ? null : teams.push(participant.Team)
-    //   if (participant.Email == "") {
-    //     row.style = "background-color: rgba(255, 0, 0, 0.5)"
-    //   }
-    //   waiverComplete.innerHTML = participant.waiverComplete === true ? 'True' : 'False'
-    // })
     teams.map(function (team, index) {
       $("#select-team-filter").append($('<option>', {
         text: team,
