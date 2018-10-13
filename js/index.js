@@ -19,7 +19,7 @@ function login () {
     .then(function() {
       $(".waiverhead").removeClass("hide")
       showForm(".waiverhead")
-      firebase.database().ref('/hype_week_2018/participants/').once('value')
+      firebase.database().ref('/hypeweek2018/').once('value')
         .then(function(snapshot) {
           var participants = snapshot.val()
           var ids = Object.keys(participants)
@@ -28,8 +28,8 @@ function login () {
           ids.map(function(id) {
             if (participants[id].Email == email & cur_id != id) {
               var user = participants[id]
-              firebase.database().ref('/hype_week_2018/participants/' + cur_id).update(user)
-              firebase.database().ref('/hype_week_2018/participants/' + id).remove()
+              firebase.database().ref('/hypeweek2018/' + cur_id).update(user)
+              firebase.database().ref('/hypeweek2018/' + id).remove()
             }
           })
         })
@@ -68,7 +68,7 @@ function loginAdmin () {
 }
 
 function loadTable () {
-  firebase.database().ref('/hype_week_2018/participants/').once('value').then(function(snapshot) {
+  firebase.database().ref('/hypeweek2018/').once('value').then(function(snapshot) {
     var participants = snapshot.val()
     var teams = []
     teams = updateTable(participants)
@@ -127,13 +127,13 @@ function createParticipant () {
     Team: team,
     waiverComplete: false
   }
-  firebase.auth().createUserWithEmailAndPassword(email, 'hype2017')
+  firebase.auth().createUserWithEmailAndPassword(email, 'hype2018')
     .then(function (newUser) {
       var userId = newUser.uid
       console.log(userId)
-      firebase.database().ref('/hype_week_2018/participants/' + oldId).remove()
+      firebase.database().ref('/hypeweek2018/' + oldId).remove()
         .then(function () {
-          firebase.database().ref('/hype_week_2018/participants/' + userId).update(user)
+          firebase.database().ref('/hypeweek2018/' + userId).update(user)
             .then(function (val) {
               alert('User successfully added!')
             })
@@ -199,7 +199,7 @@ function submitWaiver () {
     waiverComplete: true,
     timeCompleted: date.toLocaleDateString()
   }
-  firebase.database().ref('/hype_week_2018/participants/' + userId).update(user)
+  firebase.database().ref('/hypeweek2018/' + userId).update(user)
     .then(function (val) {
       $(".thank-you").removeClass("hide")
       showForm(".thank-you")
