@@ -1,11 +1,11 @@
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyB6W25napAR8VIksVpa_sgml4mkl_X5S_s",
-  authDomain: "muscarnival-45dce.firebaseapp.com",
-  databaseURL: "https://muscarnival-45dce.firebaseio.com",
-  projectId: "muscarnival-45dce",
+  apiKey: "AIzaSyBkpevvEvMLKLIly5Z56DVRmu27J64lre8",
+  authDomain: "hypeweek2018.firebaseapp.com",
+  databaseURL: "https://hypeweek2018.firebaseio.com/", 
+  projectId: "hypeweek2018",
   storageBucket: "",
-  messagingSenderId: "649034251506"
+  messagingSenderId: "464667077494"
 };
 firebase.initializeApp(config);
 var database = firebase.database();
@@ -19,7 +19,7 @@ function login () {
     .then(function() {
       $(".waiverhead").removeClass("hide")
       showForm(".waiverhead")
-      firebase.database().ref('/carnival2018/participants/').once('value')
+      firebase.database().ref('/hype_week_2018/participants/').once('value')
         .then(function(snapshot) {
           var participants = snapshot.val()
           var ids = Object.keys(participants)
@@ -28,8 +28,8 @@ function login () {
           ids.map(function(id) {
             if (participants[id].Email == email & cur_id != id) {
               var user = participants[id]
-              firebase.database().ref('/carnival2018/participants/' + cur_id).update(user)
-              firebase.database().ref('/carnival2018/participants/' + id).remove()
+              firebase.database().ref('/hype_week_2018/participants/' + cur_id).update(user)
+              firebase.database().ref('/hype_week_2018/participants/' + id).remove()
             }
           })
         })
@@ -68,7 +68,7 @@ function loginAdmin () {
 }
 
 function loadTable () {
-  firebase.database().ref('/carnival2018/participants/').once('value').then(function(snapshot) {
+  firebase.database().ref('/hype_week_2018/participants/').once('value').then(function(snapshot) {
     var participants = snapshot.val()
     var teams = []
     teams = updateTable(participants)
@@ -131,9 +131,9 @@ function createParticipant () {
     .then(function (newUser) {
       var userId = newUser.uid
       console.log(userId)
-      firebase.database().ref('/carnival2018/participants/' + oldId).remove()
+      firebase.database().ref('/hype_week_2018/participants/' + oldId).remove()
         .then(function () {
-          firebase.database().ref('/carnival2018/participants/' + userId).update(user)
+          firebase.database().ref('/hype_week_2018/participants/' + userId).update(user)
             .then(function (val) {
               alert('User successfully added!')
             })
@@ -199,7 +199,7 @@ function submitWaiver () {
     waiverComplete: true,
     timeCompleted: date.toLocaleDateString()
   }
-  firebase.database().ref('/carnival2018/participants/' + userId).update(user)
+  firebase.database().ref('/hype_week_2018/participants/' + userId).update(user)
     .then(function (val) {
       $(".thank-you").removeClass("hide")
       showForm(".thank-you")
