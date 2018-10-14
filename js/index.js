@@ -19,7 +19,7 @@ function login () {
     .then(function() {
       $(".waiverhead").removeClass("hide")
       showForm(".waiverhead")
-      firebase.database().ref('/hypeweek2018/').once('value')
+      firebase.database().ref('/hypeweek2018/participants/').once('value')
         .then(function(snapshot) {
           var participants = snapshot.val()
           var ids = Object.keys(participants)
@@ -28,8 +28,8 @@ function login () {
           ids.map(function(id) {
             if (participants[id].Email == email & cur_id != id) {
               var user = participants[id]
-              firebase.database().ref('/hypeweek2018/' + cur_id).update(user)
-              firebase.database().ref('/hypeweek2018/' + id).remove()
+              firebase.database().ref('/hypeweek2018/participants/' + cur_id).update(user)
+              firebase.database().ref('/hypeweek2018/participants/' + id).remove()
             }
           })
         })
@@ -68,7 +68,7 @@ function loginAdmin () {
 }
 
 function loadTable () {
-  firebase.database().ref("").once('value').then(function(snapshot) {
+  firebase.database().ref('/participants/').once('value').then(function(snapshot) {
     var participants = snapshot.val()
     var teams = []
     teams = updateTable(participants)
@@ -131,9 +131,9 @@ function createParticipant () {
     .then(function (newUser) {
       var userId = newUser.uid
       console.log(userId)
-      firebase.database().ref('/hypeweek2018/' + oldId).remove()
+      firebase.database().ref('/hypeweek2018/participants/' + oldId).remove()
         .then(function () {
-          firebase.database().ref('/hypeweek2018/' + userId).update(user)
+          firebase.database().ref('/hypeweek2018/participants/' + userId).update(user)
             .then(function (val) {
               alert('User successfully added!')
             })
@@ -199,7 +199,7 @@ function submitWaiver () {
     waiverComplete: true,
     timeCompleted: date.toLocaleDateString()
   }
-  firebase.database().ref('/hypeweek2018/' + userId).update(user)
+  firebase.database().ref('/hypeweek2018/participants/' + userId).update(user)
     .then(function (val) {
       $(".thank-you").removeClass("hide")
       showForm(".thank-you")
