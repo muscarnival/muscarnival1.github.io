@@ -68,7 +68,7 @@ function loginAdmin () {
 }
 
 function loadTable () {
-  firebase.database().ref('/hypeweek2018/').once('value').then(function(snapshot) {
+  firebase.database().once('value').then(function(snapshot) {
     var participants = snapshot.val()
     var teams = []
     teams = updateTable(participants)
